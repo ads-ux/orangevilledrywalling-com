@@ -1,0 +1,29 @@
+[[redirects]]
+from = "/thank-you"
+to = "/thank-you.html"
+status = 200
+
+[[redirects]]
+from = "/shelburne"
+to = "/shelburne.html"
+status = 200
+
+[[redirects]]
+from = "/grandvalley"
+to = "/grandvalley.html"
+status = 200
+
+[[redirects]]
+from = "/erin"
+to = "/erin.html"
+status = 200
+
+[[redirects]]
+from = "/mono"
+to = "/mono.html"
+status = 200
+
+[[redirects]]
+from = "/caledon-village"
+to = "/caledon-village.html"
+status = 200
