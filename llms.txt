@@ -20,6 +20,6 @@ Orangeville, Shelburne, Grand Valley, Erin, Mono, Caledon Village
 - Sitemap: https://orangevilledrywalling.com/sitemap.xml
 
 ## Contact
-- Phone: {{PHONE_DISPLAY}}
+- Phone: (226) 241-9255
 - Email: hello@orangevilledrywalling.com
 - Service area: Orangeville, Ontario, Canada
