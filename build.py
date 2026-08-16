@@ -1,53 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Drywall Services in Mono, ON | Orangeville Drywalling</title>
-<meta name="description" content="Drywall installation, repair, taping, and mudding serving Mono and surrounding areas. Licensed, insured, free quotes from Orangeville Drywalling.">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://orangevilledrywalling.com/mono">
-<meta property="og:title" content="Drywall Services in Mono, ON | Orangeville Drywalling">
-<meta property="og:description" content="Drywall installation, repair, taping, and mudding serving Mono and surrounding areas. Licensed, insured, free quotes from Orangeville Drywalling.">
-<meta property="og:url" content="https://orangevilledrywalling.com/mono">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Orangeville Drywalling", "url": "https://orangevilledrywalling.com", "telephone": "+12262419255", "email": "hello@orangevilledrywalling.com", "address": {"@type": "PostalAddress", "addressLocality": "Orangeville", "addressRegion": "ON", "addressCountry": "CA"}, "areaServed": "Mono", "description": "Drywall installation, repair, taping, and mudding serving Mono and Dufferin County. Licensed, insured, free quotes.", "openingHours": ["Mo-Fr 06:00-18:00", "Sa 07:00-14:30"], "geo": {"@type": "GeoCoordinates", "latitude": 43.917, "longitude": -80.0943}, "priceRange": "$$"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://orangevilledrywalling.com/"}, {"@type": "ListItem", "position": 2, "name": "Drywall Services in Mono", "item": "https://orangevilledrywalling.com/mono"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you regularly work in Mono, or is it out of your way?", "acceptedAnswer": {"@type": "Answer", "text": "Mono is a regular part of our service area, not a special trip \u2014 we're Orangeville is surrounded by Mono on its north and east sides."}}, {"@type": "Question", "name": "Do you offer free quotes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Fill out the form on this page or call us directly, and we'll arrange a no-obligation quote for your project."}}, {"@type": "Question", "name": "Can you match existing wall texture?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, matching existing texture (orange peel, knockdown, smooth) is standard on every repair."}}]}</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6KBGK93CYF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-6KBGK93CYF');
-</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "ww617y5f0w");
-</script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2194207214734752');
-fbq('track', 'PageView', {content_category: 'drywalling'});
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2194207214734752&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel Code -->
-<style>
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Generator for orangevilledrywalling.com new/updated pages.
+Reuses the site's own existing design system (nav/hero/cards/faq/form CSS,
+copied verbatim from the live homepage) so every new page matches the site
+exactly instead of introducing a second visual language.
+"""
+import json, os, re
+
+PHONE_DISPLAY = "(226) 241-9255"
+PHONE_TEL = "+12262419255"
+EMAIL = "hello@orangevilledrywalling.com"
+DOMAIN = "https://orangevilledrywalling.com"
+GA4_ID = "G-6KBGK93CYF"
+CLARITY_ID = "ww617y5f0w"
+FB_PIXEL = "2194207214734752"
+LASTMOD = "2026-08-15"
+
+CSS = r"""
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800&display=swap');
 
 :root {
@@ -214,93 +183,197 @@ footer { background: #111; color: #9ca3af; padding: 3rem 2rem 1.5rem; font-size:
   nav { padding: .8rem 1rem; }
   .nav-phone { display: none; }
 }
-</style>
-</head>
-<body>
-<nav>
+"""
+
+TRACKING_HEAD = f"""<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA4_ID}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', '{GA4_ID}');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){{
+        c[a]=c[a]||function(){{(c[a].q=c[a].q||[]).push(arguments)}};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    }})(window, document, "clarity", "script", "{CLARITY_ID}");
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{{if(f.fbq)return;n=f.fbq=function(){{n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)}};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '{FB_PIXEL}');
+fbq('track', 'PageView', {{content_category: 'drywalling'}});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id={FB_PIXEL}&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->"""
+
+NAV = """<nav>
 <div class="logo"><a href="/" style="color:#fff">Orangeville Drywalling</a></div>
-<ul><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li><a href="/#faq">FAQ</a></li><li><a class="nav-phone" href="tel:+12262419255">(226) 241-9255</a></li><li><a class="nav-cta" href="/#contact">Free Quote</a></li></ul>
+<ul><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li><a href="/#faq">FAQ</a></li><li><a class="nav-phone" href="tel:{tel}">{phone}</a></li><li><a class="nav-cta" href="/#contact">Free Quote</a></li></ul>
 </nav>
 <div class="hours-bar" style="background:#f5f5f5;text-align:center;padding:6px 16px;font-size:0.82rem;color:#555;border-bottom:1px solid #e0e0e0;">
-🕐 <strong>Hours:</strong> Mon–Fri 6am–6pm | Sat 7am–2:30pm &nbsp;|&nbsp; <a href="tel:+12262419255" style="color:#264566;font-weight:600;">(226) 241-9255</a>
-</div>
-<div class="hero">
-<div class="hero-bg"></div>
-<div class="hero-content">
-<h1>Drywall Services in Mono, ON</h1>
-<p>Serving Mono and the surrounding area. Licensed, insured, and locally based in Orangeville.</p>
-<a class="btn btn-primary" href="#contact">Get a Free Quote</a>
-<a href="tel:+12262419255" class="btn btn-secondary">📞 Call Now</a>
-</div></div>
-<div class="crumbs"><a href="/">Home</a> &rsaquo; Drywall Services in Mono</div>
-<section><div class="container narrow prose">
-<p>Mono homeowners looking for drywall installation and repair will find a trusted partner in <a href="/">Orangeville Drywalling</a>. We're Orangeville is surrounded by Mono on its north and east sides and regularly serve Mono as part of our normal service area — this isn't a special trip, it's a regular part of our week.</p>
-<h2>Drywalling for Mono Homes</h2>
-<p>Mono is mostly large-acreage rural and estate properties rather than dense subdivisions — think Mono Centre, the Mono Cliffs area, and the custom country homes scattered along the township's rural roads. That property type shapes the work: Mono homes tend to be larger-format custom builds with big basements, bonus rooms above garages, and finished lower levels that go well beyond a typical suburban basement package. We also see older stone and brick farmhouses, some dating back well over a century, where a renovation means blending new drywall carefully with original wall surfaces.</p>
-<h2>What We See Most in Mono</h2>
-<p>Large-scope basement drywalling and finishing in custom estate homes, bonus-room and above-garage installation, and careful repair/matching work in older farmhouses. Given the size of many Mono properties, we plan for longer jobs and coordinate scheduling around a property's specific access and layout.</p>
-</div></section>
-<section id="services" class="local-section"><div class="container">
-<h2>Drywall Services We Offer in Mono</h2>
-<p class="section-intro">The same six services we offer across Dufferin County, all available in Mono.</p>
-<div class="grid-3"><div class="card"><span class="card-icon">🧱</span><h3>Drywall Installation</h3><p>New-construction and renovation drywall hung, taped, and finished to a smooth, paint-ready surface.</p><p><a class="card-link" href="/services/drywall-installation">Details →</a></p></div><div class="card"><span class="card-icon">🩹</span><h3>Drywall Repair &amp; Patching</h3><p>Holes, cracks, water damage, and dents patched invisibly — no mismatched texture.</p><p><a class="card-link" href="/services/drywall-repair-patching">Details →</a></p></div><div class="card"><span class="card-icon">🖌️</span><h3>Taping &amp; Mudding</h3><p>Level 4 and Level 5 finishes for a flawless wall, ready for paint or wallpaper.</p><p><a class="card-link" href="/services/taping-mudding">Details →</a></p></div><div class="card"><span class="card-icon">🧹</span><h3>Popcorn Ceiling Removal</h3><p>Scrape, re-mud, and re-texture for a clean, modern ceiling.</p><p><a class="card-link" href="/services/popcorn-ceiling-removal">Details →</a></p></div><div class="card"><span class="card-icon">🏚️</span><h3>Basement Drywalling</h3><p>Full basement drywall packages, including moisture-resistant board where needed.</p><p><a class="card-link" href="/services/basement-drywalling">Details →</a></p></div><div class="card"><span class="card-icon">🏢</span><h3>Commercial Drywall</h3><p>Office, retail, and light-commercial drywall and partition work.</p><p><a class="card-link" href="/services/commercial-drywall">Details →</a></p></div></div>
-</div></section>
-<section class="local-section alt"><div class="container">
-<h2>Also Serving Nearby</h2>
-<p>We're based in Orangeville and regularly serve Shelburne, Grand Valley, Erin, Caledon Village, along with Orangeville itself.</p>
-</div></section>
-<section class="form-section" id="contact"><div class="container">
-<h2>Get a Free Quote in Mono</h2>
+🕐 <strong>Hours:</strong> Mon–Fri 6am–6pm | Sat 7am–2:30pm &nbsp;|&nbsp; <a href="tel:{tel}" style="color:#264566;font-weight:600;">{phone}</a>
+</div>""".format(tel=PHONE_TEL, phone=PHONE_DISPLAY)
+
+FOOTER = """<footer>
+<div class="footer-links"><a href="/">Home</a> · <a href="/services">Services</a> · <a href="/#faq">FAQ</a> · <a href="/privacy">Privacy Policy</a> · <a href="/sitemap.xml">Sitemap</a></div>
+<p style="text-align:center"><strong>Orangeville Drywalling</strong> | Serving Orangeville &amp; Dufferin County</p>
+<p style="text-align:center">📞 <a href="tel:{tel}">{phone}</a> &nbsp;|&nbsp; ✉️ <a href="mailto:{email}">{email}</a></p>
+<p style="text-align:center;margin-top:.5rem;font-size:.8rem" class="footer-bottom">© 2026 Orangeville Drywalling. All rights reserved.</p>
+</footer>
+
+<!-- Cookie Notice --><p style="text-align:center;font-size:.75rem;color:#888;padding:.5rem 1rem;margin:0;">We use cookies to improve your experience. See our <a href="/privacy" style="color:#888;text-decoration:underline;">Privacy Policy</a>.</p><!-- End Cookie Notice -->
+<script>
+document.querySelectorAll('.faq-item').forEach(function(item){{
+  var h = item.querySelector('.faq-question') || item.querySelector('h3');
+  if(!h) return;
+  h.style.cursor='pointer';
+  h.addEventListener('click', function(){{ item.classList.toggle('open'); }});
+}});
+document.querySelectorAll('a[href^="tel:"]').forEach(function(el){{
+  el.addEventListener('click',function(){{ if(typeof gtag==='function') gtag('event','click_to_call',{{method:'phone',site:'orangevilledrywalling.com'}}); if(typeof fbq==='function') fbq('trackCustom','ClickToCall'); }});
+}});
+</script>
+<a href="tel:{tel}" class="float-cta">📞 Free Quote</a>
+""".format(tel=PHONE_TEL, phone=PHONE_DISPLAY, email=EMAIL)
+
+
+def quote_form(default_service, area_hint=""):
+    addr_ph = f"123 Main St, {area_hint}, ON" if area_hint else "123 Main St, Orangeville, ON"
+    return f"""<section class="form-section" id="contact"><div class="container">
+<h2>Get a Free Quote{(' in ' + area_hint) if area_hint else ' in Orangeville'}</h2>
 <p class="section-intro">Fill out the form and we'll get back to you within one business day.</p>
 <div class="form-wrap">
 <form action='/thank-you' method='POST' name='quote-request' data-netlify="true" netlify-honeypot="bot-field">
 <p style="display:none"><input name="bot-field"></p>
 <input type="hidden" name="form-name" value="quote-request">
 <input type="hidden" name="site" value="orangevilledrywalling.com">
-<input type="hidden" name="service" value="Drywall Services">
+<input type="hidden" name="service" value="{default_service}">
 <label for="name">Full Name *</label>
 <input type="text" id="name" name="name" required placeholder="Jane Smith">
 <label for="email">Email Address *</label>
 <input type="email" id="email" name="email" required placeholder="jane@email.com">
 <label for="phone">Phone Number</label>
-<input type="tel" id="phone" name="phone" placeholder="(226) 241-9255">
+<input type="tel" id="phone" name="phone" placeholder="{PHONE_DISPLAY}">
 <label for="address">Property Address</label>
-<input type="text" id="address" name="address" placeholder="123 Main St, Mono, ON">
+<input type="text" id="address" name="address" placeholder="{addr_ph}">
 <label for="service-sel">Service Needed</label>
 <select id="service-sel" name="service_type">
 <option value="">-- Select a service --</option>
-<option value="Drywall Installation">Drywall Installation</option>
-<option value="Drywall Repair &amp; Patching">Drywall Repair &amp; Patching</option>
-<option value="Taping &amp; Mudding">Taping &amp; Mudding</option>
-<option value="Popcorn Ceiling Removal">Popcorn Ceiling Removal</option>
-<option value="Basement Drywalling">Basement Drywalling</option>
-<option value="Commercial Drywall">Commercial Drywall</option>
+<option value="Drywall Installation"{' selected' if default_service=='Drywall Installation' else ''}>Drywall Installation</option>
+<option value="Drywall Repair &amp; Patching"{' selected' if default_service=='Drywall Repair &amp; Patching' else ''}>Drywall Repair &amp; Patching</option>
+<option value="Taping &amp; Mudding"{' selected' if default_service=='Taping &amp; Mudding' else ''}>Taping &amp; Mudding</option>
+<option value="Popcorn Ceiling Removal"{' selected' if default_service=='Popcorn Ceiling Removal' else ''}>Popcorn Ceiling Removal</option>
+<option value="Basement Drywalling"{' selected' if default_service=='Basement Drywalling' else ''}>Basement Drywalling</option>
+<option value="Commercial Drywall"{' selected' if default_service=='Commercial Drywall' else ''}>Commercial Drywall</option>
 </select>
 <label for="message">Tell Us More</label>
 <textarea id="message" name="message" placeholder="Describe your project or question..."></textarea>
 <button type="submit" class="btn btn-primary" style="width:100%;font-size:1.1rem">Send My Request</button>
 </form>
-</div></div></section>
-<footer>
-<div class="footer-links"><a href="/">Home</a> · <a href="/services">Services</a> · <a href="/#faq">FAQ</a> · <a href="/privacy">Privacy Policy</a> · <a href="/sitemap.xml">Sitemap</a></div>
-<p style="text-align:center"><strong>Orangeville Drywalling</strong> | Serving Orangeville &amp; Dufferin County</p>
-<p style="text-align:center">📞 <a href="tel:+12262419255">(226) 241-9255</a> &nbsp;|&nbsp; ✉️ <a href="mailto:hello@orangevilledrywalling.com">hello@orangevilledrywalling.com</a></p>
-<p style="text-align:center;margin-top:.5rem;font-size:.8rem" class="footer-bottom">© 2026 Orangeville Drywalling. All rights reserved.</p>
-</footer>
+</div></div></section>"""
 
-<!-- Cookie Notice --><p style="text-align:center;font-size:.75rem;color:#888;padding:.5rem 1rem;margin:0;">We use cookies to improve your experience. See our <a href="/privacy" style="color:#888;text-decoration:underline;">Privacy Policy</a>.</p><!-- End Cookie Notice -->
-<script>
-document.querySelectorAll('.faq-item').forEach(function(item){
-  var h = item.querySelector('.faq-question') || item.querySelector('h3');
-  if(!h) return;
-  h.style.cursor='pointer';
-  h.addEventListener('click', function(){ item.classList.toggle('open'); });
-});
-document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
-  el.addEventListener('click',function(){ if(typeof gtag==='function') gtag('event','click_to_call',{method:'phone',site:'orangevilledrywalling.com'}); if(typeof fbq==='function') fbq('trackCustom','ClickToCall'); });
-});
-</script>
-<a href="tel:+12262419255" class="float-cta">📞 Free Quote</a>
 
+def page(title, description, canonical_path, schemas, body_html, hero_html):
+    canonical = f"{DOMAIN}{canonical_path}"
+    schema_tags = "\n".join(f'<script type="application/ld+json">{json.dumps(s)}</script>' for s in schemas)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{title}</title>
+<meta name="description" content="{description}">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="{canonical}">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{description}">
+<meta property="og:url" content="{canonical}">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+{schema_tags}
+{TRACKING_HEAD}
+<style>{CSS}</style>
+</head>
+<body>
+{NAV}
+{hero_html}
+{body_html}
+{FOOTER}
 </body>
-</html>
+</html>"""
+
+
+def crumbs_html(items):
+    # items: list of (label, path_or_None)
+    parts = []
+    for label, path in items:
+        if path:
+            parts.append(f'<a href="{path}">{label}</a>')
+        else:
+            parts.append(label)
+    return f'<div class="crumbs">' + ' &rsaquo; '.join(parts) + '</div>'
+
+
+def breadcrumb_schema(items):
+    # items: list of (name, url)
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": name, "item": url}
+            for i, (name, url) in enumerate(items)
+        ],
+    }
+
+
+def local_business_schema(area_served=None, extra=None):
+    s = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Orangeville Drywalling",
+        "url": DOMAIN,
+        "telephone": PHONE_TEL,
+        "email": EMAIL,
+        "address": {"@type": "PostalAddress", "addressLocality": "Orangeville", "addressRegion": "ON", "addressCountry": "CA"},
+        "areaServed": area_served or ["Orangeville", "Shelburne", "Grand Valley", "Erin", "Mono", "Caledon Village"],
+        "description": "Orangeville drywall installation, repair, taping, and mudding. Licensed, insured, free quotes. Serving Dufferin County.",
+        "openingHours": ["Mo-Fr 06:00-18:00", "Sa 07:00-14:30"],
+        "geo": {"@type": "GeoCoordinates", "latitude": 43.9170, "longitude": -80.0943},
+        "priceRange": "$$",
+    }
+    if extra:
+        s.update(extra)
+    return s
+
+
+def faq_schema(qas):
+    return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+            for q, a in qas
+        ],
+    }
+
+
+def faq_html(qas, alt=False):
+    items = "".join(
+        f'<div class="faq-item{" on-alt" if alt else ""}"><button class="faq-question">{q}<span class="faq-chevron">▾</span></button><div class="faq-answer"><p>{a}</p></div></div>'
+        for q, a in qas
+    )
+    return f'<div class="faq-list">{items}</div>'
+
+print("build.py loaded OK")
