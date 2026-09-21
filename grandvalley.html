@@ -215,6 +215,8 @@ footer { background: #111; color: #9ca3af; padding: 3rem 2rem 1.5rem; font-size:
   .nav-phone { display: none; }
 }
 </style>
+
+  <meta property="og:image" content="https://orangevilledrywalling.com/images/hero-1.jpg">
 </head>
 <body>
 <nav>
@@ -253,7 +255,7 @@ footer { background: #111; color: #9ca3af; padding: 3rem 2rem 1.5rem; font-size:
 <h2>Get a Free Quote in Grand Valley</h2>
 <p class="section-intro">Fill out the form and we'll get back to you within one business day.</p>
 <div class="form-wrap">
-<form action='/thank-you' method='POST' name='quote-request' data-netlify="true" netlify-honeypot="bot-field">
+<form action='/thank-you' method='POST' name='quote-request' data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
 <p style="display:none"><input name="bot-field"></p>
 <input type="hidden" name="form-name" value="quote-request">
 <input type="hidden" name="site" value="orangevilledrywalling.com">
@@ -278,7 +280,7 @@ footer { background: #111; color: #9ca3af; padding: 3rem 2rem 1.5rem; font-size:
 </select>
 <label for="message">Tell Us More</label>
 <textarea id="message" name="message" placeholder="Describe your project or question..."></textarea>
-<button type="submit" class="btn btn-primary" style="width:100%;font-size:1.1rem">Send My Request</button>
+<label>Photos or Video (optional)</label><input type="file" name="photos" accept="image/*,video/*" multiple><button type="submit" class="btn btn-primary" style="width:100%;font-size:1.1rem">Send My Request</button>
 </form>
 </div></div></section>
 <footer>
