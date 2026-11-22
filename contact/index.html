@@ -111,26 +111,16 @@
 <section class="contact">
   <div class="wrap">
     <div class="section-head"><span class="eyebrow">Get In Touch</span><h1>Contact Orangeville Drywalling</h1><p>Request a quote for drywall in Orangeville — or call <a href="tel:+12262419255">226-241-9255</a>.</p></div>
-    <div class="qf-card" id="quote">
-  <p class="qf-title">Request a Quote</p>
-  <form class="qf" action='/thank-you/' method='POST' name='contact' data-netlify='true' netlify-honeypot='bot-field'>
-    <input type="hidden" name="form-name" value="contact">
-    <input type="hidden" name="page" value="">
-    <p hidden><label>Skip: <input name="bot-field"></label></p>
-    <fieldset class="qf-1"><legend>What do you need help with?</legend><div class="chips"><label class="chip"><input type="radio" name="job" value="Basement Drywall &amp; Apartments"><span>Basement Drywall &amp; Apartments</span></label><label class="chip"><input type="radio" name="job" value="Drywall Installation"><span>Drywall Installation</span></label><label class="chip"><input type="radio" name="job" value="Drywall Repair &amp; Patching"><span>Drywall Repair &amp; Patching</span></label><label class="chip"><input type="radio" name="job" value="Taping, Mudding &amp; Finishing"><span>Taping, Mudding &amp; Finishing</span></label><label class="chip"><input type="radio" name="job" value="Popcorn Ceiling Removal"><span>Popcorn Ceiling Removal</span></label><label class="chip"><input type="radio" name="job" value="Something else"><span>Something else</span></label></div></fieldset>
-    <div class="qf-2">
-      <label>Name<input type="text" name="name" autocomplete="name" required></label>
-      <label>Phone<input type="tel" name="phone" autocomplete="tel" required></label>
-      <label>Street address or postal code<input type="text" name="address" autocomplete="street-address" required></label>
-      <label>Email <span class="opt">(optional)</span><input type="email" name="email" autocomplete="email"></label>
-      <label>Anything else we should know? <span class="opt">(optional)</span><textarea name="message" placeholder="e.g. raised bungalow in Orangeville, want to turn the basement into a two-bedroom apartment and need the fire-rated ceiling done; or water mark on the bedroom ceiling after the ice dam in March, about a 4 ft patch"></textarea></label>
+    <form action='/thank-you/' method='POST' name='contact' data-netlify='true' netlify-honeypot='bot-field'>
+      <input type="hidden" name="form-name" value="contact">
+      <p hidden><label>Skip: <input name="bot-field"></label></p>
+      <label>Name<input type="text" name="name" required></label>
+      <label>Phone<input type="tel" name="phone" required></label>
+      <label>Email<input type="email" name="email" required></label>
+      <label>What do you need done?<textarea name="message" placeholder="e.g. raised bungalow in Orangeville, want to turn the basement into a two-bedroom apartment and need the fire-rated ceiling done; or water mark on the bedroom ceiling after the ice dam in March, about a 4 ft patch"></textarea></label>
       <p class="casl">By submitting this form, you agree to be contacted by phone, text, or email about your request. You can opt out at any time. Your details go only to the one local drywall contractor who handles your job &mdash; nobody else.</p>
-      <button type="submit" class="btn btn-primary qf-submit">Get My Quote</button>
-    </div>
-  </form>
-  <p class="qf-alt">Prefer to talk or text? <a href="tel:+12262419255">Call 226-241-9255</a> or <a href="sms:+12262419255?&body=Hi%2C%20I%27d%20like%20a%20quote.%20Here%27s%20a%20photo%20of%20the%20job%3A">text a photo</a>.</p>
-</div>
-
+      <button type="submit" class="btn btn-primary">Send My Request</button>
+    </form>
   </div>
 </section>
 </main>
@@ -145,39 +135,7 @@
     <p class="fine">© Orangeville Drywalling. Serving Orangeville and surrounding areas.</p>
   </div>
 </footer>
-<div class="mobile-callbar mab"><a href="tel:+12262419255">Call</a><a href="sms:+12262419255?&body=Hi%2C%20I%27d%20like%20a%20quote.%20Here%27s%20a%20photo%20of%20the%20job%3A">Text</a><a href="/contact/" class="mab-quote">Get a Quote</a></div>
-<script>
-(function(){
-  document.querySelectorAll('form.qf').forEach(function(f){
-    var p=f.querySelector('input[name=page]'); if(p) p.value=location.pathname;
-    f.querySelectorAll('input[name=job]').forEach(function(r){
-      r.addEventListener('change', function(){
-        if(f.classList.contains('qf-pending')){ f.classList.remove('qf-pending'); var n=f.querySelector('input[name=name]'); if(n) n.focus(); }
-      });
-    });
-  });
-  document.querySelectorAll('.pc-job').forEach(function(sel){
-    var card=sel.closest('.pc-card'), out=card.querySelector('.pc-out');
-    sel.addEventListener('change', function(){
-      var o=sel.options[sel.selectedIndex]; if(!sel.value){ out.hidden=true; return; }
-      card.querySelector('.pc-range').textContent=o.text+': '+o.getAttribute('data-range');
-      card.querySelector('.pc-why').textContent=o.getAttribute('data-why')?('What changes the price: '+o.getAttribute('data-why')):'';
-      out.hidden=false;
-    });
-    card.querySelector('.pc-go').addEventListener('click', function(e){
-      var q=document.getElementById('quote'); if(!q) return; e.preventDefault();
-      var f=q.querySelector('form.qf'); var o=sel.options[sel.selectedIndex];
-      if(f){ f.classList.remove('qf-pending'); var m=f.querySelector('textarea[name=message]'); if(m&&o&&sel.value&&!m.value) m.value='Price check: '+o.text+' ('+o.getAttribute('data-range')+'). ';
-        var other=f.querySelector('input[name=job][value="Something else"]'); if(other && !f.querySelector('input[name=job]:checked')) other.checked=true; }
-      q.scrollIntoView({behavior:'smooth',block:'start'});
-    });
-  });
-  document.querySelectorAll('a.mab-quote').forEach(function(a){
-    a.addEventListener('click', function(e){ var q=document.getElementById('quote')||document.getElementById('free-quote')||document.getElementById('hero-quote'); if(q){ e.preventDefault(); q.scrollIntoView({behavior:'smooth',block:'start'}); } });
-  });
-})();
-</script>
-
+<a href="tel:+12262419255" class="mobile-callbar">Call Now: 226-241-9255</a>
 <script>
 (function(){
   var t=document.querySelector('.nav-toggle'), nl=document.getElementById('nav-links');

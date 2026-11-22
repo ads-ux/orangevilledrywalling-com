@@ -111,7 +111,6 @@
 <section class="contact">
   <div class="wrap">
     <div class="section-head"><span class="eyebrow">Request Received</span><h1>Thank You — We Got Your Request</h1><p>Your request has been received. We'll get back to you within one business day — usually much sooner.</p></div>
-    <div class="callout" style="max-width:620px;margin:18px auto;text-align:center"><strong>Want a faster, more accurate quote?</strong> Text a photo of the job to 226-241-9255. Photos help get the price right the first time.<p style="margin:14px 0 0"><a href="sms:+12262419255?&body=Hi%2C%20I%27d%20like%20a%20quote.%20Here%27s%20a%20photo%20of%20the%20job%3A" class="btn btn-primary">Text a Photo</a></p></div>
     <p style="text-align:center;margin:18px 0 6px">Need to reach us right away?</p>
     <p style="text-align:center;margin:0 0 24px"><a href="tel:+12262419255" class="btn btn-primary">Call 226-241-9255</a></p>
     <p style="text-align:center"><a href="/">&larr; Back to homepage</a> &nbsp;·&nbsp; <a href="/drywall-cost-orangeville">See our cost guide</a></p>
@@ -129,39 +128,7 @@
     <p class="fine">© Orangeville Drywalling. Serving Orangeville and surrounding areas.</p>
   </div>
 </footer>
-<div class="mobile-callbar mab"><a href="tel:+12262419255">Call</a><a href="sms:+12262419255?&body=Hi%2C%20I%27d%20like%20a%20quote.%20Here%27s%20a%20photo%20of%20the%20job%3A">Text</a><a href="/contact/" class="mab-quote">Get a Quote</a></div>
-<script>
-(function(){
-  document.querySelectorAll('form.qf').forEach(function(f){
-    var p=f.querySelector('input[name=page]'); if(p) p.value=location.pathname;
-    f.querySelectorAll('input[name=job]').forEach(function(r){
-      r.addEventListener('change', function(){
-        if(f.classList.contains('qf-pending')){ f.classList.remove('qf-pending'); var n=f.querySelector('input[name=name]'); if(n) n.focus(); }
-      });
-    });
-  });
-  document.querySelectorAll('.pc-job').forEach(function(sel){
-    var card=sel.closest('.pc-card'), out=card.querySelector('.pc-out');
-    sel.addEventListener('change', function(){
-      var o=sel.options[sel.selectedIndex]; if(!sel.value){ out.hidden=true; return; }
-      card.querySelector('.pc-range').textContent=o.text+': '+o.getAttribute('data-range');
-      card.querySelector('.pc-why').textContent=o.getAttribute('data-why')?('What changes the price: '+o.getAttribute('data-why')):'';
-      out.hidden=false;
-    });
-    card.querySelector('.pc-go').addEventListener('click', function(e){
-      var q=document.getElementById('quote'); if(!q) return; e.preventDefault();
-      var f=q.querySelector('form.qf'); var o=sel.options[sel.selectedIndex];
-      if(f){ f.classList.remove('qf-pending'); var m=f.querySelector('textarea[name=message]'); if(m&&o&&sel.value&&!m.value) m.value='Price check: '+o.text+' ('+o.getAttribute('data-range')+'). ';
-        var other=f.querySelector('input[name=job][value="Something else"]'); if(other && !f.querySelector('input[name=job]:checked')) other.checked=true; }
-      q.scrollIntoView({behavior:'smooth',block:'start'});
-    });
-  });
-  document.querySelectorAll('a.mab-quote').forEach(function(a){
-    a.addEventListener('click', function(e){ var q=document.getElementById('quote')||document.getElementById('free-quote')||document.getElementById('hero-quote'); if(q){ e.preventDefault(); q.scrollIntoView({behavior:'smooth',block:'start'}); } });
-  });
-})();
-</script>
-
+<a href="tel:+12262419255" class="mobile-callbar">Call Now: 226-241-9255</a>
 <script>
 (function(){
   var t=document.querySelector('.nav-toggle'), nl=document.getElementById('nav-links');
